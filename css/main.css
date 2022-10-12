@@ -18,9 +18,9 @@
     outline: 1px solid blue; /*During development*/
   }
    html {
-    color: #222;
     font-size: 1em;
     line-height: 1.4;
+    font-family: 'Rubik', 'Times New Roman', Times, serif, monospace, sans-serif;
   }
   
   /* ==========================================================================
@@ -41,7 +41,6 @@
   .hamburger {
     width: 50px;
     height: 50px;
-    background-color: rgb(150, 144, 144); /*temporary*/
     cursor: pointer;
     z-index: 999; /*Make sure menu always stays on top of content*/
   }
@@ -83,6 +82,22 @@
     background-size: 100vw; /*change to vh in mobile*/
     outline: 1px solid blue;
   }
+
+  .start-page-container {
+    height: 50%;
+    width: 35%;
+    border: 6px solid black;
+    position: absolute;
+    left: 5rem;
+    top: 5rem;
+  }
+
+  .to-the-moon-box {
+    text-transform: capitalize;
+    font-size: 4rem;
+    text-align: center;
+  }
+
   /*
    * Remove text-shadow in selection highlight:
    * https://twitter.com/miketaylr/status/12228805301
