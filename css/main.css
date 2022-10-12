@@ -59,11 +59,29 @@
   button:hover span:nth-child(2) { /* Standard position for middle span*/
     left: 0;
   }
-
+  button:hover span:nth-child(odd) { /* Standard position for 1st and 3rd span*/
+    right: 0;
+  }
   button span:nth-child(2) { /* span animation */
-    left: -6px;
+    left: -5px;
     position: relative;
     transition: left 0.3s ease-in-out;
+  }
+
+  button span:nth-child(odd) { /* span animation */
+    right: -5px;
+    position: relative;
+    transition: right 0.3s ease-in-out;
+  }
+
+  /* ==========================================================================
+    Start Page
+  ========================================================================== */
+  .start-page {
+    height: 100vh; /*Takes up full viewport*/
+    background: url(/assets/photos/adam-miller-unsplash.jpg) no-repeat center #fff;
+    background-size: 100vw; /*change to vh in mobile*/
+    outline: 1px solid blue;
   }
   /*
    * Remove text-shadow in selection highlight:
