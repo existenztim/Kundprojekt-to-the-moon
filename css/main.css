@@ -10,7 +10,13 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+  :root {
+    --pinkcolor:#D200A2; /*Stored both hex and rgb values from CMYK*/
+    --pinkcolor:rgb(210,0,162);
+  }
+  * {
+    outline: 1px solid blue; /*During development*/
+  }
    html {
     color: #222;
     font-size: 1em;
