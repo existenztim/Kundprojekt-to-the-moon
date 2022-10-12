@@ -23,6 +23,48 @@
     line-height: 1.4;
   }
   
+  /* ==========================================================================
+    Header
+  ========================================================================== */
+  .menu-open {
+    display: none; /*Hide menu until button is clicked*/
+  }
+  .menu-container {
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+  }
+  
+  .hamburger {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(150, 144, 144); /*temporary*/
+    cursor: pointer;
+    z-index: 999; /*Make sure menu always stays on top of content*/
+  }
+
+  span {
+    background-color: black;
+    width: 100%;
+    height: 4px;
+    display: block;
+    margin-bottom: 3px;
+    border-radius: 2px;
+    border: 1px solid white; /*So menu is visible on dark background*/
+  }
+
+  button:hover span:nth-child(2) { /* Standard position for middle span*/
+    left: 0;
+  }
+
+  button span:nth-child(2) { /* span animation */
+    left: -6px;
+    position: relative;
+    transition: left 0.3s ease-in-out;
+  }
   /*
    * Remove text-shadow in selection highlight:
    * https://twitter.com/miketaylr/status/12228805301
