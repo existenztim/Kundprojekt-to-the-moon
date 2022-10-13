@@ -116,7 +116,7 @@
     bottom: 1rem;
   }
 
-  .arrow-link:after {
+  .arrow-link::after {
       content: "\2192"; /*HTML entity code for right arrow*/
       margin-left: 2rem;
       position: absolute;
