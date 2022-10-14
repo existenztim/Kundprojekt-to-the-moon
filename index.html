@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&family=Rubik:ital,wght@0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    <!--Menu-->
     <header class="menu-container">
         <button id="hamburger" class="hamburger"> <!--ID if JS would be needed-->
             <span></span> 
@@ -40,18 +40,21 @@
             </ul>
         </nav>
     </header>
-
+    <!--First Page-->
     <section class="start-page">
         <div class="start-page-moon-container">
             <h1 class ="to-the-moon-box">To The Moon</h1> 
             <a class ="arrow-link"href="#">Read our story</a><!--Arrow goes here-->
         </div>
+        <div class="next-page-container">
+            <a class="arrow-link-down" href="#page-2-link"></a> <!--content: "\2193";-->
+        </div>
     </section>
-    <!--Add down arrow-->
+   <!--Second Page-->
     <main class="content-page">
         <div class="flex-container"><!--remove?-->
 
-            <section class="flex-content-1">
+            <section id="page-2-link" class="flex-content-1"> <!--Id for anchor link-->
                 <h2 class="space-ventures">Space<span>Ventures</span></h2>
                 
                 <h3 class="ground-control">Ground Control to Major Tom</h3>
@@ -63,7 +66,7 @@
                     engines on (five, four, three). Check ignition and may 
                     God's love be with you (two, one, liftoff). This is Ground 
                     Control to Major Tom.
-                    <br> <!--Find a solution with CSS?-->
+                    <br> 
                     You've really made the grade. 
                     And the papers want to know whose shirts you wear. 
                     Now it's time to leave the capsule if you dare. 
@@ -89,11 +92,10 @@
                         Am I sitting in a tin can. Far above the world. 
                         Planet Earth is blue. And there's nothing I can do. 
                         Though I'm past one hundred thousand miles. 
-                        I'm feeling very still. And I think my spaceship 
-                        knows which way to go. Tell my wife I love her very 
-                        much she knows.
-
+                        I'm feeling very still. And I think my spaceship
                         <img class="major-tom-tilt" src="/assets/photos/major_tom.jpg" alt="A portrait of the astronaut Major Tom" title="Major Tom in space" width="300" height="300">
+                        knows which way to go. Tell my wife I love her very 
+                        much she knows.<br><br>
                         
                         Ground Control to Major Tom.
                         Your circuit's dead, there's something wrong. 
@@ -103,14 +105,14 @@
                         <br>
                         Planet Earth is blue And there's nothing I can do.
                         <br>
-                        <a class="read-more-link" href="#">Read more about Major Tom</a>
+                        <a class="read-more-link" href="#">Read more about Major Tom</a><!--Come back to this for styleing-->
                     </p>
                 </div>
             </section>
 
         </div>
     </main>
-
+    <!--Fixed Bottom-->
     <footer class="footer-container">
         <p> 
             I don’t know where I’m going from here, but I promise it won’t be boring. 
