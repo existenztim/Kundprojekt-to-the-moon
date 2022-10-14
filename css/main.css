@@ -279,7 +279,58 @@
     padding: 1rem;
   }
   
+    /* ==========================================================================
+    Media queries
+  ========================================================================== */
+  @media only screen and (min-width: 600px) {
+    
+    html {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+    .flex-container {
+      flex-direction: row;
+    }
+
+    .flex-content-1 {
+      min-width: 49vw; /*right column will get same value, no need to type twice*/
+      padding:0 10% 10% 5%; /*Top,right,bottom,left*/
+    }
   
+    .flex-content-2 {
+      padding:0 5% 10% 10%; /*Top,right,bottom,left*/
+    }
+
+    .flex-content-1 h2 {
+      font-size: 7rem;
+      position: relative;
+      margin-top: 2rem;
+      padding-bottom: 5rem;  /*Need to create extra padding since span is inline*/
+   
+    }
+
+    .flex-content-1 span {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.2em;
+      font-family: 'Times New Roman', Times, serif, sans-serif;
+      position: absolute;
+      top:3rem; 
+      left:1rem;
+    }
+
+    .quotation-marks {
+      font-size: 1.8rem;
+    }
+
+    .gradient-text-desktop { 
+      display:block;
+    }
+  
+    .major-tom-tilt-desktop { /*Come back for better positioning*/
+      display: inline;
+    }
+  
+  }
   
   
   
