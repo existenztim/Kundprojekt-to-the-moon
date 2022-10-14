@@ -16,11 +16,14 @@
   }
   * {
     outline: 1px solid blue; /*During development*/
+    box-sizing: border-box;
   }
+
    html {
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: 0.7em;
+    line-height: 1.6;
     font-family: 'Rubik', 'Times New Roman', Times, serif, monospace, sans-serif;
+    scroll-behavior: smooth; /*Smooth transition on internal links*/
   }
 
   button {
@@ -85,6 +88,8 @@
     min-height: 100vh; /*Takes up full viewport*/
     background: url(/assets/photos/adam-miller-unsplash.jpg) no-repeat center #fff;
     background-size: cover; 
+    display: flex;
+    flex-direction: column;
   }
 
   .start-page-moon-container {
@@ -103,11 +108,11 @@
 
   .to-the-moon-box {
     text-transform: uppercase;
-    font-size: 5vw;
+    font-size: 5vw; /*Redo later*/
     text-align: center;
     position:relative;
   }
-
+  /*To the moon arrow*/
   .arrow-link {
     color: black;
     text-decoration: none;
@@ -133,6 +138,32 @@
     right: -3rem;
   }
 
+    /*Next page arrow*/
+    .next-page-container {
+      position: relative;
+      margin: auto;
+      margin-bottom: 7rem; /*So fixed navbar at bottom wont hide the arrow*/
+    }
+  
+    
+    .arrow-link-down::before {
+      content: "\2193";
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      font-family: "Fira Code";
+      font-size: 5rem;
+      color: white;
+      font-weight: 400;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+      text-decoration: none;
+    } 
+  
+    .arrow-link-down:hover::before {
+      margin-bottom: -2rem;
+      color: #D200A2; /*Might redo/remove*/
+    }
   
   /* ==========================================================================
     Content Page - Box 1
