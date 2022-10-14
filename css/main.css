@@ -162,7 +162,7 @@
   
     .arrow-link-down:hover::before {
       margin-bottom: -2rem;
-      color: #D200A2; /*Might redo/remove*/
+      color: var(--pinkcolor); /*Might redo/remove*/
     }
   
   /* ==========================================================================
@@ -178,24 +178,19 @@
   
   .flex-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: rgba(5, 5, 5, 0.5); /*dark semi-transparent effect for BG*/
     align-items: center;
   }
 
-  .flex-content-1 {
+  .flex-content-1, .flex-content-2 {
     min-width: 50vw; /*right column will get same value, no need to type twice*/
     align-items: center;
-    padding:0 10% 10% 5%; /*Top,right,bottom,left*/
-  }
-
-  .flex-content-2 {
-    align-items: center;
-    padding:0 5% 10% 10%; /*Top,right,bottom,left*/
+    padding:0 7% 10% 7%; /*Top,right,bottom,left*/
   }
 
   .flex-content-1 h2 {
-    font-size: 7rem;
+    font-size: 3.5rem;
     position: relative;
     margin-top: 2rem;
     padding-bottom: 5rem;  /*Need to create extra padding since span is inline*/
@@ -207,8 +202,8 @@
     font-size: 1.2em;
     font-family: 'Times New Roman', Times, serif, sans-serif;
     position: absolute;
-    top:3rem; 
-    left:1rem;
+    top:2rem; 
+    left:3rem;
   }
 
   .ground-control {
@@ -218,6 +213,9 @@
   .quotation-marks {
     font-style: italic;
     position: relative;
+    top: 2rem;
+    font-size: 1.4rem;
+    font-weight: 100; /*Thinner text*/
     quotes: "“" "”" "‘" "’"; /*Read more https://css-tricks.com/almanac/properties/q/quotes/*/
     z-index:9;          /*Need to be higher than marks:before/after*/ 
   }
@@ -231,9 +229,10 @@
   }
 
    /* =========================================================================
-    Content Page - Box 2
+    Content Page - Box 2 (Desktop Only)
   ========================================================================== */
-  .gradient-text-desktop { /*Desktop Only*/
+  .gradient-text-desktop { 
+    display: none;
     font-style: italic;
     font-weight: 300; /*Thinner text*/
     font-size: 3rem;
@@ -247,9 +246,10 @@
     opacity: 0.5;
   }
 
-  .major-tom-tilt { /*Come back for better positioning*/ /*Desktop Only*/
-    height: 200px;
-    width: 133px; /*133px is to keep aspect ratio correct*/
+  .major-tom-tilt-desktop { /*Come back for better positioning*/
+    display: none;
+    height: 175px;
+    width: 116px; /*116px is to keep aspect ratio correct*/
     float: right;  
     transform: rotate(5deg);
   }
