@@ -248,36 +248,37 @@
     right: -3rem;
   }
 
-    /*Next page arrow*/
-    .next-page-container {
-      position: relative;
-      margin: auto;
-      margin-bottom: 7rem; /*So fixed navbar at bottom wont hide the arrow*/
-    }
+  /*Next page arrow*/
+  .next-page-container {
+    position: relative;
+    margin: auto;
+    margin-bottom: 7rem; /*So fixed navbar at bottom wont hide the arrow*/
+  }
+
   
-    
-    .arrow-link-down::before {
-      content: "\2193";
-      position: absolute;
-      bottom: 0;
-      text-align: center;
-      font-family: "Fira Code";
-      font-size: 5rem;
-      color: white;
-      font-weight: 400;
-      transition: 0.3s ease-in-out;
-      cursor: pointer;
-      text-decoration: none;
-    } 
-  
-    .arrow-link-down:hover::before {
-      margin-bottom: -2rem;
-      color: var(--pinkcolor); /*Might redo/remove*/
-    }
+  .arrow-link-down::before {
+    content: "\2193";
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-family: "Fira Code";
+    font-size: 5rem;
+    color: white;
+    font-weight: 400;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+  } 
+
+  .arrow-link-down:hover::before {
+    margin-bottom: -2rem;
+    color: var(--pinkcolor); /*Might redo/remove*/
+  }
   
   /* ==========================================================================
     Content Page - Box 1
   ========================================================================== */
+
   .content-page {
     min-height: 100vh; /*Takes up full viewport*/
     background: url(/assets/photos/space-splash.jpg) no-repeat center #fff;
@@ -300,20 +301,20 @@
   }
 
   .flex-content-1 h2 {
-    font-size: 3.5rem;
+    font-size: 6rem;
     position: relative;
     margin-top: 2rem;
     padding-bottom: 5rem;  /*Need to create extra padding since span is inline*/
-    z-index: 9;            /*Need to be higher value than .flex-content-1 span */
+    z-index: 1;            /*Need to be higher value than .flex-content-1 span */
   }
 
   .flex-content-1 span {
     color: rgba(255, 255, 255, 0.5);
     font-size: 1.2em;
-    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-family: "Times New Roman", Times, serif, sans-serif;
     position: absolute;
     top:2rem; 
-    left:3rem;
+    left:5rem;
   }
 
   .ground-control {
@@ -327,15 +328,24 @@
     font-size: 1.4rem;
     font-weight: 100; /*Thinner text*/
     quotes: "“" "”" "‘" "’"; /*Read more https://css-tricks.com/almanac/properties/q/quotes/*/
-    z-index:9;          /*Need to be higher than marks:before/after*/ 
   }
 
   .quotation-marks:before {
-    content: open-quote; 
+    color: rgba(255, 255, 255, 0.6);
+    content: open-quote;
+    font-size: 5rem;
+    position: absolute;
+    bottom: 1rem;  /*Can be changed to your own preference*/
+    left: -2rem;   /*Can be changed to your own preference*/
   }
 
   .quotation-marks:after {
+    color: rgba(255, 255, 255, 0.6);
     content: close-quote; 
+    font-size: 5rem;
+    position: absolute;
+    top: 3rem;      /*Can be changed to your own preference*/
+    right: 0.2rem;  /*Can be changed to your own preference*/
   }
 
    /* =========================================================================
