@@ -26,6 +26,7 @@
 </head>
 <body>
     <!--Menu-->
+    <input type="checkbox">
     <header class="menu-container">
         <button id="hamburger" class="hamburger"> <!--ID if JS would be needed-->
             <span></span> 
@@ -34,22 +35,22 @@
         </button>
         <nav>
             <ul class="menu-open">
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">Space Ventures</a></li>
-                <li><a href="#">About Major Tom</a></li>
+                <li class="underline-effect"><a href="#">Our Story</a></li>
+                <li class="underline-effect"><a href="#">Space Ventures</a></li>
+                <li class="underline-effect"><a href="#">About Major Tom</a></li>
             </ul>
         </nav>
     </header>
     <!--First Page-->
-    <section class="start-page">
+    <aside class="start-page">
         <div class="start-page-moon-container">
             <h1 class ="to-the-moon-box">To The Moon</h1> 
-            <a class ="arrow-link"href="#">Read our story</a><!--Arrow goes here-->
+            <a class ="arrow-link"href="#">Read our story</a><!--content: "\2192";-->
         </div>
         <div class="next-page-container">
             <a class="arrow-link-down" href="#page-2-link"></a> <!--content: "\2193";-->
         </div>
-    </section>
+    </aside>
    <!--Second Page-->
     <main class="content-page">
         <div class="flex-container"><!--remove?-->
@@ -93,7 +94,11 @@
                         Planet Earth is blue. And there's nothing I can do. 
                         Though I'm past one hundred thousand miles. 
                         I'm feeling very still. And I think my spaceship
-                        <img class="major-tom-tilt-desktop" src="/assets/photos/major_tom.jpg" alt="A portrait of the astronaut Major Tom" title="Major Tom in space" width="300" height="300">
+
+                        <div class="major-tom-container">
+                            <img class="major-tom-tilt-desktop" src="/assets/photos/major_tom.jpg" alt="A portrait of the astronaut Major Tom" title="Major Tom in space" width="300" height="300"> 
+                        </div>
+
                         knows which way to go. Tell my wife I love her very 
                         much she knows.<br><br>
                         
@@ -102,8 +107,9 @@
                         Can you hear me, Major Tom? Can you hear me, Major Tom? 
                         Can you hear me, Major Tom? Can you "Here am I floating 
                         'round my tin can. Far above the moon
-                        <br>
-                        Planet Earth is blue And there's nothing I can do.
+                        <br><br><!--Add class/block element instead of <br>-->
+                        Planet Earth is blue.<br><br> 
+                        And there's nothing I can do.
                         <br>
                         <a class="read-more-link" href="#">Read more about Major Tom</a><!--Come back to this for styleing-->
                     </p>
