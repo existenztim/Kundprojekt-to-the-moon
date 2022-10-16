@@ -348,9 +348,10 @@
     right: 0.2rem;  /*Can be changed to your own preference*/
   }
 
-   /* =========================================================================
+  /* =========================================================================
     Content Page - Box 2 (Desktop Only)
   ========================================================================== */
+
   .gradient-text-desktop { 
     display: none;
     font-style: italic;
@@ -366,23 +367,51 @@
     opacity: 0.5;
   }
 
-  .major-tom-tilt-desktop { /*Come back for better positioning*/
+  .major-tom-container, .major-tom-tilt-desktop { 
     display: none;
     height: 175px;
     width: 116px; /*116px is to keep aspect ratio correct*/
     float: right;  
-    transform: rotate(5deg);
+  }
+
+  .major-tom-container { 
+    transform: rotate(5deg); /*Put transform on container, since transform inteferes with z-index on IMG*/
+  }
+
+  .read-more-link, .read-more-link:visited, .read-more-link:active {
+    color: var(--pinkcolor);
+    display: block;
+    padding-top: 1rem;
   }
   
+  .read-more-link::after {
+    content: "\2192"; /*HTML entity code for right arrow*/
+    position: absolute;
+    margin-left: 2rem;
+    height: 1rem;
+    margin-top: -1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: "Fira Code";
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .read-more-link:hover::after {
+    padding-left: 2rem;
+  }
+
   /* ==========================================================================
     Footer
   ========================================================================== */
+
   .footer-container {
     position: fixed;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    z-index:998; /*1 layer below hamburgermenu*/
+    z-index:998; /*1 layer above open menu*/
     bottom:0;
     left:0;
     padding: 1rem;
@@ -397,6 +426,7 @@
     font-weight: bold;
     color: white;
     padding: 1rem;
+    cursor: pointer;
   }
   
     /* ==========================================================================
