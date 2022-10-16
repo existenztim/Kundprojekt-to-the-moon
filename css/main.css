@@ -22,8 +22,14 @@
    html {
     font-size: 0.7em;
     line-height: 1.6;
-    font-family: 'Rubik', 'Times New Roman', Times, serif, monospace, sans-serif;
+    font-family: "Rubik", "Times New Roman", Times, serif, monospace, sans-serif;
     scroll-behavior: smooth; /*Smooth transition on internal links*/
+  }
+
+  body {
+    background-color: #999;
+    margin: 0;
+    padding: 0;
   }
 
   button {
@@ -34,34 +40,107 @@
     Header
   ========================================================================== */
   .menu-open {
-    display: none; /*Hide meny until button is clicked*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    text-align: center;
   }
-  .menu-container {
-    text-align: right;
-    position: fixed;
-    width: 100%;
-    top: 1rem;
-    left: -1rem;
-    background-color: transparent;
+
+  .menu-open li a {
+    text-decoration: none; /*Underline wont work since it will be affected by text-shadow*/
+    cursor: pointer;
+    text-transform: uppercase;
+    text-shadow: 0px 5px 2px #cecece;
+    color: #000;
+    font-weight: bolder;
+    font-size: 5rem;
+    z-index: 999; /*Display above everything else*/
+  }
+
+  .menu-open li a span {
+    display: block;
+    line-height: 0.6; /*Reduce vertical distance between words that belongs to same link on different rows*/
+  }
+
+  .underline-effect {
+    position: relative; /*So we can position the effect absolute below the*/
+  }
+
+  .underline-effect:after {
+    visibility: hidden;
+    position: absolute;
+    content: "";
+    background-color: var(--pinkcolor);
+    height: 10px;
+    border-radius: 5px;
+    bottom: -1.2rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    max-width: 60vh;
+  }
+
+  .underline-effect:hover:after {
+    visibility: visible;
   }
   
-  .hamburger {
+  nav {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.7); /*Semi transparent effect*/
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    visibility: hidden;
+    padding-bottom: 10rem; /*Because of fixed navbar*/
+  }
+
+  input:checked + .menu-container nav {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  input {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 3;
+    width: 75px;
+    height: 75px;
+    opacity: 0;
+  }
+
+  .hamburger { /*Class instead of "button" since we have more than 1 on the page*/
     width: 75px;
     height: 75px;
     background-color: transparent;
     cursor: pointer;
-    z-index: 999; /*Make sure menu always stays on top of content*/
+    z-index: 4; /*Make sure menu always stays on top of content*/
+    position: fixed;
+    right: 20px;
+    top: 20px;
   }
 
   button span {
     background-color: black;
-    width: 100%;
+    width: 75px;
     height: 10px;
     display: block;
-    margin-bottom: 6px;
     border-radius: 5%;
+    margin-bottom: 6px;
     border: 1px solid white; /*So menu is visible on dark background*/
   }
+
+  /* ==========================================================================
+    Hover animation button
+  ========================================================================== */
 
   button:hover span:nth-child(2) { /* Standard position for middle span*/
     left: 0;
@@ -82,8 +161,39 @@
   }
 
   /* ==========================================================================
-    Start Page
+    Open/close Menu
   ========================================================================== */
+
+  .hamburger:hover {  /*So checkbox gets put above*/ 
+    z-index: 1;
+  }
+
+  .hamburger { 
+    transition: all 0.3s ease-in-out;
+  }
+
+  input:checked + .menu-container button span {
+    position: absolute; 
+    transition: all 0.3s ease-in-out;
+  }
+
+  input:checked + .menu-container button span:nth-child(2) {
+    opacity: 0;
+  }
+
+  input:checked + .menu-container button span:nth-child(1) {
+    transform: rotate(45deg);
+    animation: ease-in cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+
+  input:checked + .menu-container button span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  /* ==========================================================================
+     Start Page
+  ========================================================================== */
+  
   .start-page {
     min-height: 100vh; /*Takes up full viewport*/
     background: url(/assets/photos/adam-miller-unsplash.jpg) no-repeat center #fff;
