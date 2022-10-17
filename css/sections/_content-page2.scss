@@ -1,0 +1,54 @@
+
+/* ==========================================================================
+  Content Page - Box 2
+========================================================================== */
+.gradient-text-desktop { /*Desktop Only*/
+    display: none;
+    font-style: italic;
+    font-weight: 300; /*Thinner text*/
+    font-size: 3rem;
+    width: 70%;
+    margin-top: 10%;
+    background: -webkit-linear-gradient(348deg, rgba(210,0,162,1) 0%, rgba(255,255,255,0.8015406846332283) 50%, rgba(210,0,162,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    line-height: 1.3;
+    opacity: 0.5;
+  }
+  
+  .major-tom-container, .major-tom-tilt-desktop { 
+    display: none;
+    height: 175px;
+    width: 116px; /*116px is to keep aspect ratio correct*/
+    float: right;  
+  }
+  
+  .major-tom-container { 
+    transform: rotate(5deg); /*Put transform on container, since transform inteferes with z-index*/
+  }
+  
+  .read-more-link, .read-more-link:visited, .read-more-link:active {
+    color: $customer-color-hex;
+    display: block;
+    padding-top: 1rem;
+  }
+  
+  .read-more-link::after {
+    content: "\2192"; /*HTML entity code for right arrow*/
+    position: absolute;
+    margin-left: 2rem;
+    height: 1rem;
+    margin-top: -1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: "Fira Code";
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  } 
+  
+  .read-more-link:hover::after {
+    padding-left: 2rem;
+  }
+  
