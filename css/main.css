@@ -429,10 +429,11 @@
     cursor: pointer;
   }
   
-    /* ==========================================================================
+  /* ==========================================================================
     Media queries
   ========================================================================== */
-  @media only screen and (min-width: 600px) {
+  /*Desktop*/
+  @media only screen and (min-width: 1024px) { 
     
     html {
       font-size: 1em;
@@ -452,7 +453,7 @@
     }
 
     .flex-content-1 h2 {
-      font-size: 7rem;
+      font-size: 4rem;
       position: relative;
       margin-top: 2rem;
       padding-bottom: 5rem;  /*Need to create extra padding since span is inline*/
@@ -462,28 +463,30 @@
     .flex-content-1 span {
       color: rgba(255, 255, 255, 0.5);
       font-size: 1.2em;
-      font-family: 'Times New Roman', Times, serif, sans-serif;
+      font-family: "Times New Roman", Times, serif, sans-serif;
       position: absolute;
       top:3rem; 
       left:1rem;
     }
 
     .quotation-marks {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     .gradient-text-desktop { 
       display:block;
     }
   
-    .major-tom-tilt-desktop { /*Come back for better positioning*/
+    .major-tom-container, .major-tom-tilt-desktop { 
       display: inline;
     }
   
   }
-  
-  
-  
+
+  /* ==========================================================================
+   Base styles: opinionated defaults /Boilerplate
+   ========================================================================== */
+
   /*
    * Remove text-shadow in selection highlight:
    * https://twitter.com/miketaylr/status/12228805301
