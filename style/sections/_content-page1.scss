@@ -3,7 +3,7 @@
 ========================================================================== */
 .content-page {
     min-height: 100vh; /*Takes up full viewport*/
-    background: url(/assets/photos/space-splash.jpg) no-repeat center #fff;
+    background: url("../assets/photos/space-splash.jpg") no-repeat center #fff;
     background-size: cover; 
     display: flex;
     color:#fff;   
@@ -24,7 +24,7 @@
   }
   
   .flex-content-1 h2 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     position: relative;
     margin-top: 2rem;
     padding-bottom: 5rem;  /*Need to create extra padding since span is inline*/
@@ -34,7 +34,7 @@
   .flex-content-1 span {
     color: rgba(255, 255, 255, 0.5);
     font-size: 1.2em;
-    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-family: "Times New Roman", Times, serif, sans-serif;
     position: absolute;
     top:2rem; 
     left:5rem;
@@ -46,6 +46,7 @@
   
   .quotation-marks {
     font-style: italic;
+    font-family: Georgia, "Times New Roman", Times, serif;
     position: relative;
     top: 2rem;
     font-size: 1.4rem;
