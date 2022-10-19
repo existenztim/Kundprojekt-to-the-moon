@@ -4,20 +4,21 @@
 
  $customer-color-hex:#D200A2; /*Stored both hex and rgb values from CMYK*/
  $customer-color-rgb:rgb(210,0,162);
-
+ 
+ @import "vendors/normalize";
+ @import "vendors/boilerplate-main";
  @import "sections/menu";
  @import "sections/start-page";
  @import "sections/content-page1";
  @import "sections/content-page2";
  @import "sections/footer";
  @import "vendors/boilerplate-main";
- @import "vendors/normalize";
  
   * {
     box-sizing: border-box; 
   }
   html {
-    font-size: 0.7em;
+    font-size: 1em;
     line-height: 1.6;
     font-family: "Rubik", "Times New Roman", Times, serif, monospace, sans-serif;
     scroll-behavior: smooth; /*Smooth transition on internal links*/
@@ -38,8 +39,9 @@
 ========================================================================== */ 
 /*Tablet*/
 @media only screen and (min-width: 750px) and (max-width: 1023px) {
-  html {
-    font-size: 0.8em;
+  
+  .arrow-link {
+    right: 4rem;
   }
 
   .content-page {
@@ -53,14 +55,30 @@
   .flex-content-1 {
     margin: 0;
   }
+
+  .gradient-text-desktop { 
+    display:block;
+    font-style: italic;
+    font-weight: 300; /*Thinner text*/
+    font-size: 2rem;
+    width: 90%;
+  }
 }
 
 /*Desktop*/
 @media only screen and (min-width: 1024px) {
   
-  html {
-    font-size: 1em;
-    line-height: 1.6;
+  .start-page-moon-container {
+    min-width: 500px;
+    min-height: 420px;
+  }
+
+  .menu-open li a {
+    font-size: 5rem;
+  }
+
+  .arrow-link {
+    right: 4rem;
   }
 
   .to-the-moon-box {
@@ -94,7 +112,7 @@
   .flex-content-1 span {
     color: rgba(255, 255, 255, 0.5);
     font-size: 1.2em;
-    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-family: "Times New Roman", Times, serif, sans-serif;
     position: absolute;
     top:3rem; 
     left:1rem;
@@ -108,12 +126,11 @@
     display:block;
   }
 
-  .major-tom-container, .major-tom-tilt-desktop { /*Come back for better positioning*/
+  .major-tom-container, .major-tom-tilt-desktop { 
     display: inline;
   }
 
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -122,3 +139,15 @@
     transform: none;
   }
 }
+
+/*No real effect in this project unless you disable CSS*/
+// @media (prefers-color-scheme: dark) { 
+//   html {
+//     background: rgb(0, 0, 0);
+//     color: white;
+//   }
+
+//   .to-the-moon-box {
+//     color: #999;
+//   }
+// }
