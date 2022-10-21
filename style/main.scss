@@ -2,145 +2,141 @@
   To The Moon Base CSS
 ========================================================================== */ 
 
- $customer-color-hex:#D200A2; /*Stored both hex and rgb values from CMYK*/
- $customer-color-rgb:rgb(210,0,162);
- 
- @import "vendors/normalize";
- @import "vendors/boilerplate-main";
- @import "sections/menu";
- @import "sections/start-page";
- @import "sections/content-page1";
- @import "sections/content-page2";
- @import "sections/footer";
- @import "vendors/boilerplate-main";
- 
-  * {
-    box-sizing: border-box; 
-  }
-  html {
-    font-size: 1em;
-    line-height: 1.6;
-    font-family: "Rubik", "Times New Roman", Times, serif, monospace, sans-serif;
-    scroll-behavior: smooth; /*Smooth transition on internal links*/
-  }
+$customer-color-hex:#D200A2; /*Stored both hex and rgb values from CMYK*/
+$customer-color-rgb:rgb(210,0,162);
 
-  body {
-    background-color: #999;
-    margin: 0;
-    padding: 0;
-  }
+@import "vendors/normalize";
+@import "vendors/boilerplate-main";
+@import "sections/menu";
+@import "sections/start-page";
+@import "sections/content-page1";
+@import "sections/content-page2";
+@import "sections/footer";
+@import "vendors/boilerplate-main";
 
-  button {
-    border:none;
-  }
+ * {
+   box-sizing: border-box; 
+ }
+ html {
+   font-size: 1em;
+   line-height: 1.6;
+   font-family: "Rubik", "Times New Roman", Times, serif, monospace, sans-serif;
+   scroll-behavior: smooth; /*Smooth transition on internal links*/
+ }
+
+ body {
+   background-color: #999;
+   margin: 0;
+   padding: 0;
+ }
+
+ button {
+   border:none;
+ }
 
 /* ==========================================================================
-  Media queries
+ Media queries
 ========================================================================== */ 
 /*Tablet*/
 @media only screen and (min-width: 750px) and (max-width: 1023px) {
-  
-  .arrow-link {
-    right: 4rem;
-  }
+ 
+ .arrow-link {
+   right: 4rem;
+ }
 
-  .content-page {
-    margin-bottom: 1rem;
-  }
+ .content-page {
+   margin-bottom: 1rem;
+ }
 
-  .flex-container {
-    flex-direction: row;
-  }
+ .flex-container {
+   flex-direction: row;
+ }
 
-  .flex-content-1 {
-    margin: 0;
-  }
+ .flex-content-1 {
+   margin: 0;
+ }
 
-  .gradient-text-desktop { 
-    display:block;
-    font-style: italic;
-    font-weight: 300; /*Thinner text*/
-    font-size: 2rem;
-    width: 90%;
-  }
+ .gradient-text-desktop { 
+   display:block;
+   font-style: italic;
+   font-weight: 300; /*Thinner text*/
+   font-size: 2rem;
+   width: 90%;
+ }
 }
 
 /*Desktop*/
 @media only screen and (min-width: 1024px) {
-  
-  .start-page-moon-container {
-    min-width: 500px;
-    min-height: 420px;
-  }
+ 
+ .start-page-moon-container {
+   min-width: 500px;
+   min-height: 420px;
+ }
 
-  .menu-open li a {
-    font-size: 5rem;
-  }
+ .arrow-link {
+   right: 4rem;
+ }
 
-  .arrow-link {
-    right: 4rem;
-  }
+ .to-the-moon-box {
+   font-size: 7rem;
+ }
+ .content-page {
+   margin-bottom: 1rem;
+ }
+ 
+ .flex-container {
+   flex-direction: row;
+ }
 
-  .to-the-moon-box {
-    font-size: 7rem;
-  }
-  .content-page {
-    margin-bottom: 1rem;
-  }
-  
-  .flex-container {
-    flex-direction: row;
-  }
+ .flex-content-1 {
+   min-width: 49vw; /*right column will get same value, no need to type twice*/
+   padding:0 10% 10% 5%; /*Top,right,bottom,left*/
+ }
 
-  .flex-content-1 {
-    min-width: 49vw; /*right column will get same value, no need to type twice*/
-    padding:0 10% 10% 5%; /*Top,right,bottom,left*/
-  }
+ .flex-content-2 {
+   padding:0 5% 10% 10%; /*Top,right,bottom,left*/
+ }
 
-  .flex-content-2 {
-    padding:0 5% 10% 10%; /*Top,right,bottom,left*/
-  }
+ .flex-content-1 h2 {
+   font-size: 7rem;
+   position: relative;
+   margin-top: 2rem;
+   padding-bottom: 5rem;  /*Need to create extra padding since span is inline*/
+ 
+ }
 
-  .flex-content-1 h2 {
-    font-size: 7rem;
-    position: relative;
-    margin-top: 2rem;
-    padding-bottom: 5rem;  /*Need to create extra padding since span is inline*/
-  
-  }
+ .flex-content-1 span {
+   color: rgba(255, 255, 255, 0.5);
+   font-size: 1.2em;
+   font-family: "Times New Roman", Times, serif, sans-serif;
+   position: absolute;
+   top:3rem; 
+   left:1rem;
+ }
 
-  .flex-content-1 span {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 1.2em;
-    font-family: "Times New Roman", Times, serif, sans-serif;
-    position: absolute;
-    top:3rem; 
-    left:1rem;
-  }
+ .quotation-marks {
+   font-size: 1.6rem;
+ }
 
-  .quotation-marks {
-    font-size: 1.6rem;
-  }
+ .gradient-text-desktop { 
+   display:block;
+ }
 
-  .gradient-text-desktop { 
-    display:block;
-  }
-
-  .major-tom-container, .major-tom-tilt-desktop { 
-    display: inline;
-  }
+ .major-tom-container, .major-tom-tilt-desktop { 
+   display: inline;
+ }
 
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none;
-    transition: none;
-    transform: none;
-  }
+ * {
+   animation: none;
+   transition: none;
+   transform: none;
+ }
 }
 
-/*No real effect in this project unless you disable CSS*/
+/*No real effect in this project unless you disable CSS, uncomment to use*/
 // @media (prefers-color-scheme: dark) { 
 //   html {
 //     background: rgb(0, 0, 0);
@@ -151,3 +147,4 @@
 //     color: #999;
 //   }
 // }
+

@@ -1,61 +1,63 @@
 /* ==========================================================================
     Header
 ========================================================================== */
+
 .menu-open {
   list-style: none;
   margin: 3rem 2rem 0 2rem;
+  max-width: 500px;
   padding: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-evenly;
   text-align: center;
+  z-index: 999;
+
+  li a {
+    text-decoration: none; /*Underline wont work since it will be affected by text-shadow*/
+    cursor: pointer;
+    text-transform: uppercase;
+    text-shadow: 0px 5px 2px #cecece;
+    color: #000;
+    font-weight: bolder;
+    font-size: clamp(3rem, 6vw, 4rem);
+    z-index: 999; /*Display above everything else*/
+
+  }
 }
 
-.menu-open li a {
-  text-decoration: none; /*Underline wont work since it will be affected by text-shadow*/
-  cursor: pointer;
-  text-transform: uppercase;
-  text-shadow: 0px 5px 2px #cecece;
-  color: #000;
-  font-weight: bolder;
-  font-size: 3rem;
-  z-index: 999; /*Display above everything else*/
+.menu-open li a:hover { /*Emulate an underline effect*/
+  background: radial-gradient(farthest-side, $customer-color-hex 95%, #0000) bottom left,linear-gradient($customer-color-hex 0 0) bottom, radial-gradient(farthest-side, $customer-color-hex 95%, #0000) bottom right;
+  background-size: 0.5rem 0.5rem, calc(100% - 0.5rem) 0.5rem; /*Relative size with font*/
+  background-repeat: no-repeat;
+  padding: 0.5rem 0;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
-.menu-open li a span {
-  display: block;
-  line-height: 0.6; /*Reduce vertical distance between words that belongs to same link on different rows*/
-}
-
-.underline-effect {
-  position: relative; /*So we can position the effect absolute below the*/
-}
-
-.underline-effect:after {
-  visibility: hidden;
-  position: absolute;
-  content: ""; /*: need content to be visible*/
-  background-color: $customer-color-hex;
-  height: 10px;
-  border-radius: 5px;
-  bottom: -1.2rem;
-  margin: 0 auto;
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);  /*Semi transparent effect*/
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  top: 0;
   left: 0;
-  right: 0;
-  max-width: 60vh;
-  
-}
-
-.underline-effect:hover:after {
-  visibility: visible;
+  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  visibility: hidden;
+  z-index: 1;
+  padding-bottom: 10rem; /*Because of fixed navbar*/
 }
 
 /* ==========================================================================
     Button
  ========================================================================== */
 
- .hamburger {
+.hamburger {
   width: 75px;
   height: 75px;
   position: fixed;
@@ -66,20 +68,21 @@
   top: 20px;
   z-index: 3;
   pointer-events: none;
-}
 
-.hamburger span {
-  display: block;
-  width: 50px;
-  height: 7px;
-  background-color: black;
-  border-radius: 6px;
-  margin-bottom: 6px;
-  position: relative;
-  left: 0;
-  border: 1px solid white;
-  transition: all 0.3s ease-in-out;
-  margin-left: 6px;
+  span {
+    display: block;
+    width: 50px;
+    height: 7px;
+    background-color: black;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    position: relative;
+    left: 0;
+    border: 1px solid white;
+    transition: all 0.3s ease-in-out;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
 }
 
 input {
@@ -95,60 +98,37 @@ input {
 
 .hamburger span:nth-child(2) {
   margin-left: 0;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 input:hover + .menu-container .hamburger span:nth-child(2) {
   left: 6px;
 }
 
-nav {
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.7); /*Semi transparent effect*/
-  height: 100vh;
-  width: 100vw;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
-  visibility: hidden;
-  z-index: 1;
-  padding-bottom: 10rem; /*Because of fixed navbar*/
-}
 
-input:checked+.menu-container nav {
+input:checked + .menu-container nav {
   visibility: visible;
   opacity: 1;
 }
 
-.menu-open {
-  list-style: none;
-  margin: 3rem 2rem 0 2rem;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-evenly;
-  text-align: center;
-}
 /* ==========================================================================
     Open/close Menu
 ========================================================================== */
 
 input:checked + .menu-container button span {
-  position: absolute; 
+  position: absolute;
   transition: all 0.3s ease-in-out;
-}
 
-input:checked + .menu-container button span:nth-child(2) {
-  opacity: 0;
-}
+  &:nth-child(2) {
+    opacity: 0;
+  }
 
-input:checked + .menu-container button span:nth-child(1) {
-  transform: rotate(45deg);
-  animation: ease-in cubic-bezier(0.215, 0.610, 0.355, 1);
-}
+  &:nth-child(1) {
+    transform: rotate(45deg);
+    animation: ease-in cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
 
-input:checked + .menu-container button span:nth-child(3) {
-  transform: rotate(-45deg);
+  &:nth-child(3) {
+    transform: rotate(-45deg);
+  }
 }
